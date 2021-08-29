@@ -1,0 +1,56 @@
+.App {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.Form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 1rem;
+  flex:1;
+  max-width: 20rem;
+  
+}
+
+.Title {
+  margin: 0;
+
+  font-size: 3rem;
+  margin: 0 auto;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.Input {
+  border: 0;
+  padding: 1rem;
+  flex:1;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
+  transition: box-shadow 0.2s;
+}
+.Input:focus {
+  box-shadow: 0 0 10px rgb(68, 224, 47);
+}
+
+.Button {
+  border: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 1rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  background-color: rgb(68, 224, 47);
+  color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: filter 0.2s, transform 0.2s;
+}
+
+.Button:hover {
+  filter:brightness(0.7);
+}
+.Button:active {
+  transform: scale(0.9);
+}
