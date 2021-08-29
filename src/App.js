@@ -1,9 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import { toast } from 'react-toastify';
-import {api} from './services/api'
-import { Login } from './fakeApi/login';
-import Cookies from 'universal-cookie';
 import { useUser } from './context/User';
 
 function App() {
@@ -12,7 +9,6 @@ function App() {
 
   const {
     login,
-    userIsLogged
   } = useUser();
 
   function ResetInputs() {

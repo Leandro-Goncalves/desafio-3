@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import Cookies from "universal-cookie";
-import { Login } from "../fakeApi/login";
+import { api } from "../services/api";
 
 const UserContext = createContext()
 
@@ -18,9 +18,13 @@ export const UserProvider = ({children}) => {
       },[])
 
     async function login(email, password) {
-        const {jwt} = await Login(email, password);
+        const {data} = await api.post("login", {email, password});
+        const {jwt, error, message} = data;
+        if(error){
+            throw new Error (message);  
+        }
         if(!jwt) {
-            throw new Error ("Cookie Invalid")  
+            throw new Error ("Cookie Invalid"); 
         }
         const cookies = new Cookies();
         cookies.set('jwt', jwt, { path: '/' });
